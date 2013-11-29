@@ -1,0 +1,15 @@
+#!/bin/bash
+
+RED="\[\033[1;31m\]"
+YELLOW="\[\033[1;33m\]"
+BLUE="\[\033[1;34m\]"
+GREEN="\e[1;32m"
+VOID="\[\033[0;39m\]"
+
+PS1='\u'$RED'@'$VOID'\h'$RED'[ '$BLUE'\w'$RED' ]'$VOID'$(
+   gitinfo="$(git branch 2>/dev/null | grep "^*" | cut -c3-)"
+   if [ "$gitinfo" ]
+   then
+     printf " > "$GREEN$gitinfo"'$VOID'"
+   fi
+) : '
