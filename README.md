@@ -6,6 +6,6 @@ Installation
 
 in yout bashrc, add this line
 
-<pre><code>T
+<pre><code>
 . /path/to/git-prompt
 </code></pre>
